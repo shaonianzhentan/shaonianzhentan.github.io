@@ -144,13 +144,23 @@
                         border: none;
                         border-radius: 30px;
                         background: #f1cad2;
-                        color: white;" />
+                        outline:none;
+                        color: white;" onkeydown="submit(this)" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://cdn.bootcss.com/crypto-js/3.1.9/crypto-js.min.js"></script>
+    <script src="https://cdn.bootcss.com/moment.js/2.21.0/moment.min.js"></script>
     <script>
+        function submit(t) {
+            if (event.keyCode == 13) {                
+                CryptoJS.MD5("zllwyx").toString().toUpperCase()
+                console.log(t.value)
+            }
+        }
+
         var $window = $(window), gardenCtx, gardenCanvas, $garden, garden;
         var clientWidth = $(window).width();
         var clientHeight = $(window).height();
@@ -240,8 +250,8 @@
             if (seconds < 10) {
                 seconds = "0" + seconds;
             }
-            var result = "<span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 时 <span class=\"digit\">" + minutes 
-            + "</span> 分 <span class=\"digit\">" + seconds + "</span> 秒";
+            var result = "<span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 时 <span class=\"digit\">" + minutes
+                + "</span> 分 <span class=\"digit\">" + seconds + "</span> 秒";
             $("#elapseClock").html(result);
         }
 
