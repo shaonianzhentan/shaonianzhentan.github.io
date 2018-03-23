@@ -167,7 +167,7 @@
         function submit(t) {
             if (event.keyCode == 13 && t.value.trim() != '') {
                 let key = CryptoJS.MD5(t.value + moment().format('yyyy-MM-dd')).toString().toUpperCase()
-                location.href = 'https://api3.jiluxinqing.com/wyz.html?code=' + key
+                location.href = 'https://admin.jiluxinqing.com/wyz.html?code=' + key
                 //console.log(t.value)
             }
         }
