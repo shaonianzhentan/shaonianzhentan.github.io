@@ -166,8 +166,8 @@
 
         function submit(t) {
             if (event.keyCode == 13 && t.value.trim() != '') {
-                let key = CryptoJS.MD5(t.value + moment().format('yyyy-MM-dd')).toString().toUpperCase()
-                location.href = 'https://admin.jiluxinqing.com/wyz.html?code=' + key
+                let key = CryptoJS.MD5(t.value + moment().format('L')).toString().toUpperCase()
+                location.href = 'https://admin.jiluxinqing.com/wyz.html?loveCode=' + key
                 //console.log(t.value)
             }
         }
