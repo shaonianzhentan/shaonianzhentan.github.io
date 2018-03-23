@@ -154,10 +154,21 @@
     <script src="https://cdn.bootcss.com/crypto-js/3.1.9/crypto-js.min.js"></script>
     <script src="https://cdn.bootcss.com/moment.js/2.21.0/moment.min.js"></script>
     <script>
+        var ua = navigator.userAgent;
+
+        var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+            isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+            isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+            isMobile = isIphone || isAndroid;
+        if (isMobile) {
+            //手机直接跳到登录页
+        }
+
         function submit(t) {
-            if (event.keyCode == 13) {                
-                CryptoJS.MD5("zllwyx").toString().toUpperCase()
-                console.log(t.value)
+            if (event.keyCode == 13 && t.value.trim() != '') {
+                let key = CryptoJS.MD5(t.value + moment().format('yyyy-MM-dd')).toString().toUpperCase()
+                location.href = 'http://api3.jiluxinqing.com/wyz.html?code=' + key
+                //console.log(t.value)
             }
         }
 
@@ -257,7 +268,7 @@
 
         function showMessages() {
             adjustWordsPosition();
-            $('#messages').fadeIn(5000, function () {
+            $('#messages').fadeIn(1000, function () {
                 showLoveU();
             });
         }
@@ -273,7 +284,7 @@
         }
 
         function showLoveU() {
-            $('#loveu').fadeIn(3000);
+            $('#loveu').fadeIn(1000);
         }
     </script>
     <script type="text/javascript">
