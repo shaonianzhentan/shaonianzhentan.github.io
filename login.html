@@ -162,12 +162,13 @@
             isMobile = isIphone || isAndroid;
         if (isMobile) {
             //手机直接跳到登录页
+            location.href = "mlogin.html";
         }
 
         function submit(t) {
             if (event.keyCode == 13 && t.value.trim() != '') {
                 let key = CryptoJS.MD5(t.value + moment().format('L')).toString().toUpperCase()
-                location.href = 'https://admin.jiluxinqing.com/iloveyou?loveCode=' + key
+                location.href = 'https://admin.jiluxinqing.com/love?loveCode=' + key
                 //console.log(t.value)
             }
         }
