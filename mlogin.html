@@ -17,7 +17,11 @@
             background: #E91E63;
             border: 1px solid #E91E63;
         }
-        .btn.btn-success.active, .btn.btn-success:active, .btn.btn-success:focus, .btn.btn-success:hover{
+
+        .btn.btn-success.active,
+        .btn.btn-success:active,
+        .btn.btn-success:focus,
+        .btn.btn-success:hover {
             background: #E91E63;
         }
     </style>
@@ -83,12 +87,12 @@
             })
         });
 
-        $('#lockScreen').submit(function (e) {
+        $('#lockScreen').submit(function () {
             let pwd = $('#pwd').val();
-
-            let key = CryptoJS.MD5(pwd + moment().format('L')).toString().toUpperCase()
-            location.href = 'https://admin.jiluxinqing.com/love?loveCode=' + key
-
+            if (pwd.trim() != '') {
+                let key = CryptoJS.MD5(pwd + moment().format('L')).toString().toUpperCase()
+                location.href = 'https://admin.jiluxinqing.com/love?loveCode=' + key
+            }
             return false;
         })
 
