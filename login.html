@@ -154,16 +154,18 @@
     <script src="https://cdn.bootcss.com/crypto-js/3.1.9/crypto-js.min.js"></script>
     <script src="https://cdn.bootcss.com/moment.js/2.21.0/moment.min.js"></script>
     <script>
-        var ua = navigator.userAgent;
 
-        var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
-            isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
-            isAndroid = ua.match(/(Android)\s+([\d.]+)/),
-            isMobile = isIphone || isAndroid;
-        if (isMobile) {
-            //手机直接跳到登录页
-            location.href = "mlogin.html";
-        }
+        (function () {
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            //alert('是否是Android：'+isAndroid);
+            //alert('是否是iOS：'+isiOS);
+            if (isAndroid || isiOS) {
+                //手机直接跳到登录页
+                location.href = "mlogin.html";
+            }
+        })();
 
         function submit(t) {
             if (event.keyCode == 13 && t.value.trim() != '') {
