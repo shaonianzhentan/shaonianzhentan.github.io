@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>汪艳霞.我爱你</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffe;
+            font-size: 12px;
+            overflow: auto
+        }
+
+        #mainDiv {
+            width: 100%;
+            height: 100%
+        }
+
+        #loveHeart {
+            float: left;
+            width: 670px;
+            height: 625px
+        }
+
+        #garden {
+            width: 100%;
+            height: 100%
+        }
+
+        #elapseClock {
+            text-align: right;
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 10px
+        }
+
+        #words {
+            font-family: "sans-serif";
+            width: 500px;
+            font-size: 24px;
+            color: #666
+        }
+
+        #messages {
+            display: none
+        }
+
+        #elapseClock .digit {
+            font-family: "digit";
+            font-size: 36px
+        }
+
+        #loveu {
+            padding: 5px;
+            font-size: 22px;
+            margin-top: 80px;
+            margin-right: 120px;
+            text-align: right;
+            display: none
+        }
+
+        #loveu .signature {
+            margin-top: 10px;
+            font-size: 20px;
+            font-style: italic
+        }
+
+        #clickSound {
+            display: none
+        }
+
+        #code {
+            float: left;
+            width: 440px;
+            height: 400px;
+            color: #333;
+            font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
+            font-size: 12px
+        }
+
+        #code .string {
+            color: #2a36ff
+        }
+
+        #code .keyword {
+            color: #7f0055;
+            font-weight: bold
+        }
+
+        #code .placeholder {
+            margin-left: 15px
+        }
+
+        #code .space {
+            margin-left: 7px
+        }
+
+        #code .comments {
+            color: #3f7f5f
+        }
+
+        #copyright {
+            margin-top: 10px;
+            text-align: center;
+            width: 100%;
+            color: #666
+        }
+
+        #errorMsg {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            position: absolute;
+            top: 100px;
+            left: 0
+        }
+
+        #copyright a {
+            color: #666
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="love/garden.js"></script>
+</head>
+
+<body>
+
+    <div id="mainDiv">
+        <div id="content">
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        亲爱的，这是我们相爱在一起的时光。
+                        <div id="elapseClock"></div>
+                    </div>
+                    <div id="loveu">
+                        <input type="password" placeholder="开启甜蜜时刻" style="    margin-right: 10px;
+                        text-align: center;
+                        padding: 10px;
+                        border: none;
+                        border-radius: 30px;
+                        background: #f1cad2;
+                        outline:none;
+                        color: white;" onkeydown="submit(this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/crypto-js/3.1.9/crypto-js.min.js"></script>
+    <script src="https://cdn.bootcss.com/moment.js/2.21.0/moment.min.js"></script>
+    <script>
+        var ua = navigator.userAgent;
+
+        var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+            isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+            isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+            isMobile = isIphone || isAndroid;
+        if (isMobile) {
+            //手机直接跳到登录页
+        }
+
+        function submit(t) {
+            if (event.keyCode == 13 && t.value.trim() != '') {
+                let key = CryptoJS.MD5(t.value + moment().format('L')).toString().toUpperCase()
+                location.href = 'https://admin.jiluxinqing.com/iloveyou?loveCode=' + key
+                //console.log(t.value)
+            }
+        }
+
+        var $window = $(window), gardenCtx, gardenCanvas, $garden, garden;
+        var clientWidth = $(window).width();
+        var clientHeight = $(window).height();
+
+        $(function () {
+            // setup garden
+            $loveHeart = $("#loveHeart");
+            var offsetX = $loveHeart.width() / 2;
+            var offsetY = $loveHeart.height() / 2 - 55;
+            $garden = $("#garden");
+            gardenCanvas = $garden[0];
+            gardenCanvas.width = $("#loveHeart").width();
+            gardenCanvas.height = $("#loveHeart").height()
+            gardenCtx = gardenCanvas.getContext("2d");
+            gardenCtx.globalCompositeOperation = "lighter";
+            garden = new Garden(gardenCtx, gardenCanvas);
+
+            $("#content").css("width", $loveHeart.width());
+            $("#content").css("height", Math.max($loveHeart.height()));
+            $("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
+            $("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
+
+            // renderLoop
+            setInterval(function () {
+                garden.render();
+            }, Garden.options.growSpeed);
+        });
+
+        $(window).resize(function () {
+            var newWidth = $(window).width();
+            var newHeight = $(window).height();
+            if (newWidth != clientWidth && newHeight != clientHeight) {
+                location.replace(location);
+            }
+        });
+
+        function getHeartPoint(angle) {
+            var t = angle / Math.PI;
+            var x = 19.5 * (16 * Math.pow(Math.sin(t), 3));
+            var y = - 20 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+            return new Array(offsetX + x, offsetY + y);
+        }
+
+        function startHeartAnimation() {
+            var interval = 50;
+            var angle = 10;
+            var heart = new Array();
+            var animationTimer = setInterval(function () {
+                var bloom = getHeartPoint(angle);
+                var draw = true;
+                for (var i = 0; i < heart.length; i++) {
+                    var p = heart[i];
+                    var distance = Math.sqrt(Math.pow(p[0] - bloom[0], 2) + Math.pow(p[1] - bloom[1], 2));
+                    if (distance < Garden.options.bloomRadius.max * 1.3) {
+                        draw = false;
+                        break;
+                    }
+                }
+                if (draw) {
+                    heart.push(bloom);
+                    garden.createRandomBloom(bloom[0], bloom[1]);
+                }
+                if (angle >= 30) {
+                    clearInterval(animationTimer);
+                    showMessages();
+                } else {
+                    angle += 0.2;
+                }
+            }, interval);
+        }
+
+        function timeElapse(date) {
+            var current = Date();
+            var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
+            var days = Math.floor(seconds / (3600 * 24));
+            seconds = seconds % (3600 * 24);
+            var hours = Math.floor(seconds / 3600);
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            seconds = seconds % 3600;
+            var minutes = Math.floor(seconds / 60);
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            seconds = seconds % 60;
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            var result = "<span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 时 <span class=\"digit\">" + minutes
+                + "</span> 分 <span class=\"digit\">" + seconds + "</span> 秒";
+            $("#elapseClock").html(result);
+        }
+
+        function showMessages() {
+            adjustWordsPosition();
+            $('#messages').fadeIn(1000, function () {
+                showLoveU();
+            });
+        }
+
+        function adjustWordsPosition() {
+            $('#words').css("position", "absolute");
+            $('#words').css("top", $("#garden").position().top + 195);
+            $('#words').css("left", $("#garden").position().left + 70);
+        }
+
+        function adjustCodePosition() {
+            $('#code').css("margin-top", ($("#garden").height()) / 2);
+        }
+
+        function showLoveU() {
+            $('#loveu').fadeIn(1000);
+        }
+    </script>
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        var together = new Date();
+        together.setFullYear(2017, 1, 1);
+        together.setHours(20);
+        together.setMinutes(0);
+        together.setSeconds(0);
+        together.setMilliseconds(0);
+
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+            document.body.appendChild(msg);
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+
+            startHeartAnimation();
+
+
+            timeElapse(together);
+            setInterval(function () {
+                timeElapse(together);
+            }, 500);
+
+            adjustCodePosition();
+        }
+    </script>
+
+</body>
+
+</html>
