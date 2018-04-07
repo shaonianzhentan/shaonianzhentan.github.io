@@ -140,22 +140,22 @@ ul li{
 	cursor: pointer;
 }
 .audio-prev{
-	background-image: url('/player/img/prev.png');
+	background-image: url('../img/prev.png');
 }
 .audio-next{
-	background-image: url('/player/img/next.png');
+	background-image: url('../img/next.png');
 }
 .audio-play{
-	background-image: url('/player/img/play.png');
+	background-image: url('../img/play.png');
 }
 .audio-stop{
-	background-image: url('/player/img/pause.png');
+	background-image: url('../img/pause.png');
 }
 .audio-menu{
-	background-image: url('/player/img/menu.png');
+	background-image: url('../img/menu.png');
 }
 .audio-volume{
-	background-image: url('/player/img/volume.png');
+	background-image: url('../img/volume.png');
 }
 .audio-select > div + div{
 	margin-left: 10px;
