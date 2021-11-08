@@ -6,22 +6,13 @@
     icon: mdi-litecoin
     link: https://lit.dev/
 娱乐:
-  - name: MDN Web Docs
-    icon: mdi-web
-    link: https://developer.mozilla.org/zh-CN/docs/Web/API
-  - name: MDN Web Docs
-    icon: mdi-web
-    link: https://developer.mozilla.org/zh-CN/docs/Web/API
-  - name: MDN Web Docs
-    icon: mdi-web
-    link: https://developer.mozilla.org/zh-CN/docs/Web/API娱乐
+  - name: Todolist
+    icon: mdi-format-list-numbered
+    link: https://todoist.com/app/
 工具:
-  - name: MDN Web Docs
-    icon: mdi-web
-    link: https://developer.mozilla.org/zh-CN/docs/Web/API
-  - name: MDN Web Docs
-    icon: mdi-web
-    link: https://developer.mozilla.org/zh-CN/docs/Web/API
-  - name: MDN Web Docs
-    icon: mdi-web
-    link: https://developer.mozilla.org/zh-CN/docs/Web/API娱乐
+  - name: 搬瓦工
+    icon: mdi-server
+    link: https://bwh81.net/
+  - name: Material Design Icons
+    icon: mdi-material-design
+    link: https://unpkg.com/@mdi/font@6.4.95/preview.html

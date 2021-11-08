@@ -6,17 +6,12 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi,viewport-fit=cover" />
     <title>我的收藏</title>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@mdi/font@6.2.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.2.95/css/materialdesignicons.min.css">
     <style>
         html,
         body {
             margin: 0;
             padding: 0;
-        }
-
-        .item {
-            background: rgba(0, 0, 0, .5);
-            color: white;
         }
 
         .title {
@@ -25,15 +20,16 @@
 
         li {
             display: inline-block;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
             padding: 10px;
         }
 
-        li:hover {
+        a:hover{
             background: black;
-        }
-
-        li a {
-            text-decoration: none;
             color: white;
         }
 
@@ -49,8 +45,9 @@
             <h2 class="title">{{key}}</h2>
             <ul>
                 <li v-for="(nav, i) in data[key]" :key="i">
-                    <i :class="['mdi', nav.icon]"></i>
-                    <a :href="nav.link" target="_blank">{{nav.name}}</a>
+                    <a :href="nav.link" target="_blank">                        
+                        <i :class="['mdi', nav.icon]"></i>
+                        {{nav.name}}</a>
                 </li>
             </ul>
         </div>
