@@ -16,3 +16,6 @@
   - name: Material Design Icons
     icon: mdi-material-design
     link: https://unpkg.com/@mdi/font@6.4.95/preview.html
+  - name: 阿里云盘
+    icon: mdi-file-cloud
+    link: https://www.aliyundrive.com/
