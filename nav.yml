@@ -19,3 +19,6 @@
   - name: 阿里云盘
     icon: mdi-file-cloud
     link: https://www.aliyundrive.com/
+  - name: Gitee
+    icon: mdi-alpha-g-circle-outline
+    link: https://gitee.com/
