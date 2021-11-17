@@ -15,10 +15,13 @@
     link: https://bwh81.net/
   - name: Material Design Icons
     icon: mdi-material-design
-    link: https://unpkg.com/@mdi/font@6.4.95/preview.html
+    link: https://unpkg.com/@mdi/font@latest/preview.html
   - name: 阿里云盘
     icon: mdi-file-cloud
     link: https://www.aliyundrive.com/
   - name: Gitee
     icon: mdi-alpha-g-circle-outline
     link: https://gitee.com/
+  - name: APKPure
+    icon: mdi-android
+    link: https://apkpure.com/cn/
