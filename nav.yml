@@ -5,6 +5,12 @@
   - name: Lit - Web组件
     icon: mdi-litecoin
     link: https://lit.dev/
+  - name: Ant Design Vue
+    icon: mdi-vuejs
+    link: https://antdv.com/
+  - name: Material Web
+    icon: mdi-material-design
+    link: https://github.com/material-components/material-web
 娱乐:
   - name: Todolist
     icon: mdi-format-list-numbered
