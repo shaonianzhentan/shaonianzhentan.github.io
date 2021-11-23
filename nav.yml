@@ -11,6 +11,18 @@
   - name: Material Web
     icon: mdi-material-design
     link: https://github.com/material-components/material-web
+  - name: 代码在线编辑器
+    icon: mdi-code-parentheses-box
+    link: https://stackblitz.com/
+  - name: 我的VisualStudio代码库
+    icon: mdi-code-parentheses-box
+    link: https://shaonianzhentan.visualstudio.com/
+  - name: 我的GitHub代码库
+    icon: mdi-github
+    link: https://github.com/shaonianzhentan
+  - name: Xamarin
+    icon: mdi-code-parentheses-box
+    link: https://docs.microsoft.com/zh-cn/xamarin/
 娱乐:
   - name: Todolist
     icon: mdi-format-list-numbered
