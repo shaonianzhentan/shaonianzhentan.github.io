@@ -15,13 +15,13 @@
     icon: mdi-code-parentheses-box
     link: https://stackblitz.com/
   - name: 我的VisualStudio代码库
-    icon: mdi-code-parentheses-box
+    icon: mdi-microsoft-visual-studio
     link: https://shaonianzhentan.visualstudio.com/
   - name: 我的GitHub代码库
     icon: mdi-github
     link: https://github.com/shaonianzhentan
   - name: Xamarin
-    icon: mdi-code-parentheses-box
+    icon: mdi-xamarin
     link: https://docs.microsoft.com/zh-cn/xamarin/
 娱乐:
   - name: Todolist
