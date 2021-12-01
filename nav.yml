@@ -1,16 +1,4 @@
 学习:
-  - name: MDN Web Docs
-    icon: mdi-firefox
-    link: https://developer.mozilla.org/zh-CN/docs/Web/API
-  - name: Lit - Web组件
-    icon: mdi-litecoin
-    link: https://lit.dev/
-  - name: Ant Design Vue
-    icon: mdi-vuejs
-    link: https://antdv.com/
-  - name: Material Web
-    icon: mdi-material-design
-    link: https://github.com/material-components/material-web
   - name: 代码在线编辑器
     icon: mdi-code-parentheses-box
     link: https://stackblitz.com/
@@ -20,20 +8,38 @@
   - name: 我的GitHub代码库
     icon: mdi-github
     link: https://github.com/shaonianzhentan
-  - name: Xamarin
-    icon: mdi-xamarin
-    link: https://docs.microsoft.com/zh-cn/xamarin/
 娱乐:
   - name: Todolist
     icon: mdi-format-list-numbered
     link: https://todoist.com/app/
+文档:
+  - name: MDN Web Docs
+    icon: mdi-firefox
+    link: https://developer.mozilla.org/zh-CN/docs/Web/API
+  - name: Linux学习文档
+    icon: mdi-file-document
+    link: http://www.jinbuguo.com/systemd/systemd.service.html
+前端:
+  - name: Material Design Icons
+    icon: mdi-material-design
+    link: https://unpkg.com/@mdi/font@latest/preview.html
+  - name: Lit - Web组件
+    icon: mdi-litecoin
+    link: https://lit.dev/
+  - name: Ant Design Vue
+    icon: mdi-vuejs
+    link: https://antdv.com/
+  - name: Material Web
+    icon: mdi-material-design
+    link: https://github.com/material-components/material-web
+后端:
+  - name: Xamarin
+    icon: mdi-xamarin
+    link: https://docs.microsoft.com/zh-cn/xamarin/
 工具:
   - name: 搬瓦工
     icon: mdi-server
     link: https://bwh81.net/
-  - name: Material Design Icons
-    icon: mdi-material-design
-    link: https://unpkg.com/@mdi/font@latest/preview.html
   - name: 阿里云盘
     icon: mdi-file-cloud
     link: https://www.aliyundrive.com/
