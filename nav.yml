@@ -12,6 +12,10 @@
   - name: Todolist
     icon: mdi-format-list-numbered
     link: https://todoist.com/app/
+接口:
+  - name: IP地址
+    icon: mdi-ip-outline
+    link: https://api.ipify.org/?format=json
 文档:
   - name: MDN Web Docs
     icon: mdi-firefox
