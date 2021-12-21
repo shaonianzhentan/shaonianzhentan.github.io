@@ -40,6 +40,9 @@
   - name: Xamarin
     icon: mdi-xamarin
     link: https://docs.microsoft.com/zh-cn/xamarin/
+  - name: WinUI3
+    icon: mdi-microsoft-windows
+    link: https://docs.microsoft.com/zh-cn/windows/apps/winui/winui3/
 工具:
   - name: 搬瓦工
     icon: mdi-server
