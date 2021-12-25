@@ -12,6 +12,9 @@
   - name: Todolist
     icon: mdi-format-list-numbered
     link: https://todoist.com/app/
+  - name: 高清壁纸
+    icon: mdi-image
+    link: https://pic.netbian.com/
 接口:
   - name: IP地址
     icon: mdi-ip-outline
