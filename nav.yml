@@ -59,3 +59,9 @@
   - name: APKPure
     icon: mdi-android
     link: https://apkpure.com/cn/
+  - name: 学习Git命令
+    icon: mdi-github
+    link: https://ohshitgit.com/zh
+  - name: Git Emoji
+    icon: mdi-sticker-emoji
+    link: https://gitmoji.dev
